@@ -1,0 +1,54 @@
+#! /usr/local/bin/vvp
+:ivl_version "14.0 (devel)" "(s20251012-202-gf696064af)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x556cfccfd740 .scope module, "sillyfunction" "sillyfunction" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "y";
+o0x7f6b13c8f288 .functor BUFZ 1, c4<z>; HiZ drive
+L_0x556cfcd471a0 .functor NOT 1, o0x7f6b13c8f288, C4<0>, C4<0>, C4<0>;
+o0x7f6b13c8f2b8 .functor BUFZ 1, c4<z>; HiZ drive
+L_0x556cfcd47260 .functor NOT 1, o0x7f6b13c8f2b8, C4<0>, C4<0>, C4<0>;
+L_0x556cfcd47330 .functor AND 1, L_0x556cfcd471a0, L_0x556cfcd47260, C4<1>, C4<1>;
+o0x7f6b13c8f2e8 .functor BUFZ 1, c4<z>; HiZ drive
+L_0x556cfcd47420 .functor NOT 1, o0x7f6b13c8f2e8, C4<0>, C4<0>, C4<0>;
+L_0x556cfcd474c0 .functor AND 1, L_0x556cfcd47330, L_0x556cfcd47420, C4<1>, C4<1>;
+L_0x556cfcd47600 .functor NOT 1, o0x7f6b13c8f2b8, C4<0>, C4<0>, C4<0>;
+L_0x556cfcd47700 .functor AND 1, o0x7f6b13c8f288, L_0x556cfcd47600, C4<1>, C4<1>;
+L_0x556cfcd47810 .functor NOT 1, o0x7f6b13c8f2e8, C4<0>, C4<0>, C4<0>;
+L_0x556cfcd47920 .functor AND 1, L_0x556cfcd47700, L_0x556cfcd47810, C4<1>, C4<1>;
+L_0x556cfcd47a30 .functor OR 1, L_0x556cfcd474c0, L_0x556cfcd47920, C4<0>, C4<0>;
+L_0x556cfcd47ba0 .functor NOT 1, o0x7f6b13c8f2b8, C4<0>, C4<0>, C4<0>;
+L_0x556cfcd47c10 .functor AND 1, o0x7f6b13c8f288, L_0x556cfcd47ba0, C4<1>, C4<1>;
+L_0x556cfcd47cf0 .functor AND 1, L_0x556cfcd47c10, o0x7f6b13c8f2e8, C4<1>, C4<1>;
+L_0x556cfcd47db0 .functor OR 1, L_0x556cfcd47a30, L_0x556cfcd47cf0, C4<0>, C4<0>;
+v0x556cfccfc730_0 .net *"_ivl_0", 0 0, L_0x556cfcd471a0;  1 drivers
+v0x556cfcd461a0_0 .net *"_ivl_10", 0 0, L_0x556cfcd47600;  1 drivers
+v0x556cfcd46280_0 .net *"_ivl_12", 0 0, L_0x556cfcd47700;  1 drivers
+v0x556cfcd46370_0 .net *"_ivl_14", 0 0, L_0x556cfcd47810;  1 drivers
+v0x556cfcd46450_0 .net *"_ivl_16", 0 0, L_0x556cfcd47920;  1 drivers
+v0x556cfcd46580_0 .net *"_ivl_18", 0 0, L_0x556cfcd47a30;  1 drivers
+v0x556cfcd46660_0 .net *"_ivl_2", 0 0, L_0x556cfcd47260;  1 drivers
+v0x556cfcd46740_0 .net *"_ivl_20", 0 0, L_0x556cfcd47ba0;  1 drivers
+v0x556cfcd46820_0 .net *"_ivl_22", 0 0, L_0x556cfcd47c10;  1 drivers
+v0x556cfcd46990_0 .net *"_ivl_24", 0 0, L_0x556cfcd47cf0;  1 drivers
+v0x556cfcd46a70_0 .net *"_ivl_4", 0 0, L_0x556cfcd47330;  1 drivers
+v0x556cfcd46b50_0 .net *"_ivl_6", 0 0, L_0x556cfcd47420;  1 drivers
+v0x556cfcd46c30_0 .net *"_ivl_8", 0 0, L_0x556cfcd474c0;  1 drivers
+v0x556cfcd46d10_0 .net "a", 0 0, o0x7f6b13c8f288;  0 drivers
+v0x556cfcd46dd0_0 .net "b", 0 0, o0x7f6b13c8f2b8;  0 drivers
+v0x556cfcd46e90_0 .net "c", 0 0, o0x7f6b13c8f2e8;  0 drivers
+v0x556cfcd46f50_0 .net "y", 0 0, L_0x556cfcd47db0;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "sillyfunction.v";
